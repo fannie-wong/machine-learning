@@ -1,0 +1,20 @@
+Backpropagation is using the chain rule to calculate the gradient(for Weights and Bias).
+
+Here we first use a simple example to show how this algorithm works:
+
+#input the initial value
+x = -3; y = 6; z = -4
+#feedforward
+alpha = x + y  #alpha=3
+f = alpha * z  #f=-12
+#backpropagation:
+#first: f = alpha * z
+df/dz = alpha #the gradient of z is 3
+df/dalpha = z #the gradient of alpha is -4
+#then: alpha = x + y
+#chain rule
+df/dx = df/dalpha * dalpha/dx #dalpha/dx = 1 
+df/dy = df/dalpha * dalpha/dy #dalpha/dy = 1
+
+Now, we know the gradients[df/dx,df/dy,df/dz], then we can use them to update the original weights and bias.
+
